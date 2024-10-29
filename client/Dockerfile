@@ -1,6 +1,6 @@
 FROM node:20-alpine as builder
 WORKDIR /app
-COPY package.* /app
+COPY package*.json /app
 RUN npm i --no-progress
 COPY . /app
 RUN npm run build

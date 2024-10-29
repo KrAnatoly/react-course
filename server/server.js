@@ -24,8 +24,8 @@ if (LOG_REST) app.use(logger);
 app.use(cors())
 
 const db = {};
-db.books = new Datastore({filename: 'books.db', autoload: true});
-db.selections = new Datastore({filename: 'selections.db', autoload: true});
+db.books = new Datastore({filename: 'db/books.db', autoload: true});
+db.selections = new Datastore({filename: 'db/selections.db', autoload: true});
 
 function sleep(ms) {
     return new Promise((resolve) => {

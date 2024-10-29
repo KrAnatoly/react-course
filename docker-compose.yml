@@ -1,0 +1,20 @@
+services:
+  client:
+    build:
+      context: ./client
+    depends_on: ['server']
+    ports: ['3000:80']
+    # networks: 
+    #  - server
+
+  server:
+    build:
+      context: ./server
+    ports: ['3001:3001']
+    volumes: ['./server/db:/app/db']
+    # networks: 
+    #   - server
+
+# networks: 
+#   server:
+#     driver: 'bridge'
